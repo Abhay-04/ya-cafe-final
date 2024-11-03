@@ -7,7 +7,7 @@ const TopRated = ({ data }) => {
 
   return (
     <div>
-      <h1>Top Rated Restaurants</h1>
+     
       {data.map((item) => (
             <div key={item?.info?.id}>
               <Link to={"/restaurant/" + item?.info?.id}>

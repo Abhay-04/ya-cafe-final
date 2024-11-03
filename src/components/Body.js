@@ -18,6 +18,9 @@ const Body = () => {
   //  first we create a state for storing data
   const [topRatedData, setTopRatedData] = useState(null);
 
+  const [topRatedTitle, setTopRatedTitle] = useState(null);
+  const [onlineDeliveryTitle, setOnlineDelieryTitle] = useState(null);
+
   const [searchText, setSearchText] = useState("");
   const [allData, setAllData] = useState([]);
 
@@ -71,6 +74,9 @@ const Body = () => {
     setTopRatedData(
       json?.data?.cards[1]?.card.card?.gridElements?.infoWithStyle.restaurants
     );
+
+    setTopRatedTitle(json.data.cards[1]?.card?.card?.header?.title);
+    setOnlineDelieryTitle(json.data.cards[2]?.card?.card?.title);
   };
 
   const onlinestatus = useOnlineStatus();
@@ -126,11 +132,14 @@ const Body = () => {
       </div>
 
       <Whatsonyourmind data={carouselData} />
-      <TopRated data={topRatedData} />
+      <div>
+        <h1>{topRatedTitle}</h1>
+        <TopRated data={topRatedData} />
+      </div>
 
       <div className="mb-2  w-[80%] ">
         <h1 className="text-2xl sm:text-2xl font-bold text-black my-8 tracking-wide">
-        Restaurants with online food delivery in Delhi
+         {onlineDeliveryTitle}
         </h1>
 
         <div className="filter">
