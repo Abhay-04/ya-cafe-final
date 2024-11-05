@@ -93,7 +93,7 @@ const Body = () => {
   return listofrestaurants.length === 0 ? (
     <Shimmer />
   ) : (
-    <div className="body flex flex-col items-center mt-10  ">
+    <div className="body flex flex-col items-center mt-10 overflow-hidden  ">
       {/* <div className="search m-4 p-6 flex items-center">
         <label>UserName:</label>
         <input
@@ -132,8 +132,8 @@ const Body = () => {
       </div>
 
       <Whatsonyourmind data={carouselData} />
-      <div>
-        <h1>{topRatedTitle}</h1>
+      <div className="w-[80%]">
+        <h1 className="text-xl sm:text-2xl font-bold text-black my-8 tracking-wide">{topRatedTitle}</h1>
         <TopRated data={topRatedData} />
       </div>
 
