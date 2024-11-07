@@ -74,24 +74,16 @@ const Header = () => {
               <span>Cart</span>
             </Link>
           </li>
-          <div className="flex items-center space-x-4">
-            <button
-              className="flex items-center px-4 py-2 border border-orange-500 text-orange-500 font-semibold rounded-full hover:bg-orange-500 hover:text-white transition duration-300"
-              onClick={() =>
-                setbtnNameReact(btnNameReact === "Login" ? "Logout" : "Login")
-              }
-            >
-              {btnNameReact === "Login" ? (
-                <FiLogIn className="mr-2 text-lg" />
-              ) : (
-                <FiLogOut className="mr-2 text-lg" />
-              )}
-              {btnNameReact}
-            </button>
 
-            {/* Displaying logged-in user */}
-            {/* <span className="text-gray-700 font-medium">{loggedInUser}</span> */}
-          </div>
+          <li>
+            <Link
+              to="/signIn"
+              className="flex items-center space-x-2 text-lg font-semibold text-gray-700 hover:text-orange-500 hover:underline underline-offset-4 transition duration-300 ease-in-out"
+            >
+              <FaShoppingCart className="text-2xl" />
+              <span>SignIn</span>
+            </Link>
+          </li>
         </ul>
       </nav>
     </header>
